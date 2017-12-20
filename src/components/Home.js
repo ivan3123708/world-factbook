@@ -1,8 +1,10 @@
 import React from 'react';
+import SearchFilters from './SearchFilters';
 
 const Home = () => (
-  <div>
-    <h1>HOME</h1>
+  <div className="home">
+    <h1>World Factbook</h1>
+    <SearchFilters />
   </div>
 );
 
