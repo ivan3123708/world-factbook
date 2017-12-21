@@ -5,7 +5,7 @@ class SearchFilters extends React.Component {
   render() {
     return (
       <div className="search-filters">
-        <input type="text"/>
+        <input type="text" autoFocus/>
         <select>
           <option>Name</option>
           <option>Capital</option>

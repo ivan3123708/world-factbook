@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Roboto+Mono');
+
 $dark: #20242b;
 $light-blue: #b7deff;
 
 body {
   background: $dark;
+  color: $light-blue;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }

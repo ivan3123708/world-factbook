@@ -1,0 +1,26 @@
+.search-filters {
+  margin: 50px auto;
+}
+
+.search-filters input {
+  margin: 0 20px;
+  padding: 5px;
+  background: $dark;
+  color: $light-blue;
+  text-shadow: 0 0 4px $light-blue;
+  text-align: center;
+  border: 1px solid $light-blue;
+  border-radius: 3px;
+  font-size: 18px;
+  font-family: 'Roboto Mono';
+}
+
+.search-filters select {
+  padding: 2px 5px;
+  background: $dark;
+  color: $light-blue;
+  border: 1px solid $light-blue;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Roboto Mono';
+}
