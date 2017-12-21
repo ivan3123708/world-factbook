@@ -6,6 +6,10 @@ class SearchFilters extends React.Component {
     return (
       <div className="search-filters">
         <input type="text"/>
+        <select>
+          <option>Name</option>
+          <option>Capital</option>
+        </select>
       </div>
     )
   }
