@@ -1,22 +1,18 @@
+import axios from 'axios';
+
+let countries = [];
+
+axios.get('https://restcountries.eu/rest/v2/all')
+  .then((res) => {
+    countries = res.data;
+  })
+  .catch((e) => {
+    console.log(e)
+  });
+
 const initialState = {
   filter: '',
-  countries: [
-    {
-      name: 'Argentina',
-      capital: 'Buenos Aires',
-      population: 43000000
-    },
-    {
-      name: 'Russia',
-      capital: 'Moscow',
-      population: 142000000
-    },
-    {
-      name: 'Japan',
-      capital: 'Tokyo',
-      population: 125000000
-    }
-  ]
+  countries: countries
 };
 
 const filtersReducer = (state = initialState, action) => {
