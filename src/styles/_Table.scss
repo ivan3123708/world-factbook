@@ -3,14 +3,51 @@
   font-family: 'Roboto Mono';
 }
 
-.table thead {
+.table .number {
+  text-align: center;
+}
+
+.no-results {
+  font-family: 'Roboto Mono';
+}
+
+.table .info {
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: darken($light-blue, 25%);
+}
+
+.table table {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.table thead tr th {
+  padding: 5px 10px;
+  background: rgb(38, 40, 49);
   font-style: italic;
 }
 
 .table img {
-  max-width: 50px;
+  margin-top: 5px;
+  max-width: 40px;
 }
 
-.table tbody tr {
-  max-width: 50px;
+.table tbody tr td {
+  max-width: 150px;
+  padding: 2px 10px;
+  background: rgba(38, 40, 49, 0.589);
+}
+
+.td-flag {
+  width: 40px;
+}
+
+.td-calling-code {
+  width: 50px;
+}
+
+.td-name, .td-capital, .td-area, .td-population, .td-region, .td-subregion {
+  width: 150px;
 }

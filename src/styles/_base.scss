@@ -10,6 +10,16 @@ body {
   background-attachment: fixed;
 }
 
+a {
+  color: $light-blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darken($light-blue, 25%);
+  text-decoration: underline;
+}
+
 input:focus,
 select:focus,
 textarea:focus,

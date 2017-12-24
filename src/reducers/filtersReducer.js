@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
+  loaded: false,
   countries: [],
   filterType: 'name',
   filter: ''
@@ -18,7 +19,8 @@ const filtersReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'FETCH_DATA':
       return {
-        ...state
+        ...state,
+        loaded: true
       }
     case 'SET_FILTER_TYPE':
       return {
