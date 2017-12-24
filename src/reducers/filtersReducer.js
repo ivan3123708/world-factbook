@@ -4,7 +4,8 @@ const initialState = {
   loaded: false,
   countries: [],
   filterType: 'name',
-  filter: ''
+  filter: '',
+  sortBy: 'name'
 };
 
 axios.get('https://restcountries.eu/rest/v2/all')
@@ -31,6 +32,11 @@ const filtersReducer = (state = initialState, action) => {
       return {
         ...state,
         filter: action.filter
+      }
+    case 'SET_SORT_BY':
+      return {
+        ...state,
+        sortBy: action.sortBy
       }
     default:
       return state

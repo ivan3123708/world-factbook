@@ -12,4 +12,9 @@ const setFilter = (filter) => ({
   filter: filter
 });
 
-export { fetchData, setFilterType, setFilter };
+const setSortBy = (sortBy) => ({
+  type: 'SET_SORT_BY',
+  sortBy: sortBy
+});
+
+export { fetchData, setFilterType, setFilter, setSortBy };

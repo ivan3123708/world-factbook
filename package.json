@@ -6,9 +6,10 @@
   "author": "ivan yakimov",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "serve": "live-server public/",
-    "start:dev": "webpack-dev-server"
+    "build": "webpack -p",
+    "start:dev": "webpack-dev-server",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -19,7 +20,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.7",
-    "live-server": "^1.2.0",
     "node-sass": "^4.7.2",
     "numeral": "^2.0.6",
     "react": "^16.2.0",
