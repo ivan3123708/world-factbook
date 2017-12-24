@@ -23,16 +23,24 @@ class Table extends React.Component {
                 <th>Capital</th>
                 <th>Area</th>
                 <th>Population</th>
-                <th>Language</th>
                 <th>Calling Code</th>
                 <th>Region</th>
                 <th>Subregion</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{this.props.countries[0].name}</td>
-              </tr>
+              {this.props.countries.map((country) => (
+                <tr key={country.name}>
+                  <td><img src={country.flag}/></td>
+                  <td>{country.name}</td>
+                  <td>{country.capital}</td>
+                  <td>{country.area}</td>
+                  <td>{country.population}</td>
+                  <td>{country.callingCodes[0]}</td>
+                  <td>{country.region}</td>
+                  <td>{country.subregion}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

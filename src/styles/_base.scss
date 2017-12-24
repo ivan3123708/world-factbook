@@ -4,8 +4,10 @@ $dark: #20242b;
 $light-blue: #b7deff;
 
 body {
-  background: $dark;
   color: $light-blue;
+  background-image: url('./img/world1.png');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 input:focus,

@@ -1,7 +1,16 @@
 .table {
+  text-align: left;
   font-family: 'Roboto Mono';
 }
 
 .table thead {
   font-style: italic;
+}
+
+.table img {
+  max-width: 50px;
+}
+
+.table tbody tr {
+  max-width: 50px;
 }
