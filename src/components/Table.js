@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchData } from '../actions/filtersAction';
+import { fetchData } from '../actions/filtersActions';
+import { filterCountries } from '../selectors/filterCountries';
 
 class Table extends React.Component {
 
@@ -56,7 +57,7 @@ class Table extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  countries: state.countries
+  countries: filterCountries(state.countries, state.filterType, state.filter)
 });
 
 const mapDispatchToProps = (dispatch) => ({

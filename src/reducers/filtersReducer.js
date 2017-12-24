@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const initialState = {
-  filter: '',
-  countries: []
+  countries: [],
+  filterType: 'name',
+  filter: ''
 };
 
 axios.get('https://restcountries.eu/rest/v2/all')
@@ -18,6 +19,11 @@ const filtersReducer = (state = initialState, action) => {
     case 'FETCH_DATA':
       return {
         ...state
+      }
+    case 'SET_FILTER_TYPE':
+      return {
+        ...state,
+        filterType: action.filterType
       }
     case 'SET_FILTER':
       return {
