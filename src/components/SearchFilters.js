@@ -9,7 +9,7 @@ class SearchFilters extends React.Component {
   }
 
   filterChange = (e) => {
-    if (/^[A-Za-z0-9]*$/.test(e.target.value)) {
+    if (/^[A-Za-z0-9\s]*$/.test(e.target.value)) {
       this.props.setFilter(e.target.value);
     }
   }
