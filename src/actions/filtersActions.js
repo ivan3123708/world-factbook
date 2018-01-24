@@ -1,6 +1,12 @@
-const fetchData = () => ({
-  type: 'FETCH_DATA',
-});
+import axios from 'axios';
+
+const fetchData = (dispatch) => {
+  axios.get('https://restcountries.eu/rest/v2/all')
+    .then((res) => dispatch({
+      type: 'FETCH_DATA',
+      countries: res.data
+    }));
+}
 
 const setFilterType = (filterType) => ({
   type: 'SET_FILTER_TYPE',

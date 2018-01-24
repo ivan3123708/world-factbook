@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const initialState = {
   loaded: false,
   countries: [],
@@ -8,20 +6,13 @@ const initialState = {
   sortBy: 'name'
 };
 
-axios.get('https://restcountries.eu/rest/v2/all')
-  .then((res) => {
-    initialState.countries = res.data;
-  })
-  .catch((e) => {
-    console.log(e)
-  });
-
 const filtersReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'FETCH_DATA':
       return {
         ...state,
-        loaded: true
+        loaded: true,
+        countries: action.countries
       }
     case 'SET_FILTER_TYPE':
       return {

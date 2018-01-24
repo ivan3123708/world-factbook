@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf public/dist",
-    "build": "yarn run clean && webpack -p",
+    "build": "npm run clean && webpack -p",
     "start:dev": "webpack-dev-server",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -28,6 +28,7 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",

@@ -8,9 +8,7 @@ import { sortCountries } from '../selectors/sortCountries';
 class Table extends React.Component {
 
   componentDidMount() {
-    setTimeout(() => {
-      this.props.fetchData();
-    }, 1500);
+    this.props.getData();
   }
 
   sortBy = (sortBy) => {
@@ -82,7 +80,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchData: () => dispatch(fetchData()),
+  getData: () => fetchData(dispatch),
   setSortBy: (sortBy) => dispatch(setSortBy(sortBy))
 });
 
