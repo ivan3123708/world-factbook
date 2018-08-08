@@ -1,26 +1,33 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
-import numeral from 'numeral';
+import * as numeral from 'numeral';
 import { fetchData, setSortBy } from '../actions/filtersActions';
 import { filterCountries } from '../selectors/filterCountries';
 import { sortCountries } from '../selectors/sortCountries';
 
-class Table extends React.Component {
+interface TableProps {
+  loaded: boolean;
+  countries: any[];
+  number: number;
+  sortBy: string;
+  getData: () => void;
+  setSortBy: (sortBy: string) => void;
+}
+
+class Table extends React.Component<TableProps, {}> {
+  private sortBy = (sortBy: string): void => {
+    this.props.setSortBy(sortBy);
+    // this.props.fetchData();
+  }
 
   componentDidMount() {
     this.props.getData();
   }
 
-  sortBy = (sortBy) => {
-    this.props.setSortBy(sortBy);
-    this.props.fetchData();
-  }
-
   render() {
+    let isPlural: string = this.props.number > 1 ? 'results' : 'result';
 
-    let isPlural = this.props.number > 1 ? 'results' : 'result';
-
-    if(this.props.loaded && this.props.countries.length > 0) {
+    if (this.props.loaded && this.props.countries.length > 0) {
       return (
         <div className="table">
           <p className="number">{`${this.props.number} ${isPlural} found`}</p>
