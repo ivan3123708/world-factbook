@@ -1,4 +1,4 @@
-const filterCountries = (countriesArr, filterType, filter) => {
+const filterCountries = (countriesArr: any[], filterType: string, filter: string): any[] => {
   if(filter) {
     let regex = new RegExp(`^${filter}.*$`, 'i');
     if(filterType === 'calling code') {

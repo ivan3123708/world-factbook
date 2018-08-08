@@ -1,14 +1,20 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { setFilterType, setFilter } from '../actions/filtersActions';
 
-class SearchFilters extends React.Component {
+interface SearchFiltersProps {
+  filter: string;
+  setFilter: (filter: string) => void;
+  setFilterType: (type: string) => void;
+}
 
-  filterTypeChange = (e) => {
+class SearchFilters extends React.Component<SearchFiltersProps, {}> {
+
+  private filterTypeChange = (e) => {
     this.props.setFilterType(e.target.value);
   }
 
-  filterChange = (e) => {
+  private filterChange = (e) => {
     if (/^[A-Za-z0-9\s]*$/.test(e.target.value)) {
       this.props.setFilter(e.target.value);
     }
