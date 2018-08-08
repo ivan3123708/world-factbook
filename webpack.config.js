@@ -2,30 +2,28 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-const VENDOR_LIBS = [
-  'axios',
-  'numeral',
-  'react',
-  'react-dom',
-  'react-redux',
-  'redux'
-]
-
 module.exports = {
   entry: {
-    bundle: './src/index.js',
-    vendor: VENDOR_LIBS
+    bundle: './src/index.tsx'
   },
   output: {
     path: path.resolve(__dirname, 'public', 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'awesome-typescript-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
       },
       {
         test: /\.scss$/,
@@ -37,14 +35,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
-    }),
-    new HTMLWebpackPlugin({
-      template: 'public/index.html'
-    })
-  ],
   devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public', 'dist'),

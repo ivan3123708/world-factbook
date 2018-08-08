@@ -1,4 +1,4 @@
-const sortCountries = (countriesArr, sortBy) => {
+const sortCountries = (countriesArr: any[], sortBy: string): any[] => {
   if (sortBy === 'name' || sortBy === 'capital' || sortBy === 'region') {
     return countriesArr.sort((a, b) => (a[sortBy] > b[sortBy]) ? 1 : ((b[sortBy] > a[sortBy]) ? -1 : 0));
   } else {
