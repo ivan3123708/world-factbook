@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { setFilterType, setFilter } from '../actions/filtersActions';
+import * as actions from '../actions/filterActions';
 
 interface SearchFiltersProps {
   filter: string;
@@ -41,8 +41,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setFilterType: (type) => dispatch(setFilterType(type)),
-  setFilter: (filter) => dispatch(setFilter(filter))
+  setFilterType: (type) => dispatch(actions.setFilterType(type)),
+  setFilter: (filter) => dispatch(actions.setFilter(filter))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchFilters);

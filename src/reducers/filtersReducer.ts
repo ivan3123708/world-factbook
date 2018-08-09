@@ -1,3 +1,6 @@
+import { StoreState } from '../store/configureStore';
+import { Actions } from '../actions/filterActions';
+
 const initialState = {
   loaded: false,
   countries: [],
@@ -6,7 +9,7 @@ const initialState = {
   sortBy: 'name'
 };
 
-const filtersReducer = (state = initialState, action) => {
+export const filtersReducer = (state: StoreState = initialState, action: Actions): StoreState => {
   switch(action.type) {
     case 'FETCH_DATA':
       return {
@@ -32,6 +35,4 @@ const filtersReducer = (state = initialState, action) => {
     default:
       return state
   }
-}
-
-export default filtersReducer;
+};
