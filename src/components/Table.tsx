@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import * as numeral from 'numeral';
-import { fetchData, setSortBy } from '../actions/filtersActions';
+import * as actions from '../actions/filterActions';
 import { filterCountries } from '../selectors/filterCountries';
 import { sortCountries } from '../selectors/sortCountries';
 
@@ -17,7 +17,6 @@ interface TableProps {
 class Table extends React.Component<TableProps, {}> {
   private sortBy = (sortBy: string): void => {
     this.props.setSortBy(sortBy);
-    // this.props.fetchData();
   }
 
   componentDidMount() {
@@ -87,8 +86,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getData: () => fetchData(dispatch),
-  setSortBy: (sortBy) => dispatch(setSortBy(sortBy))
+  getData: () => actions.fetchData(dispatch),
+  setSortBy: (sortBy) => dispatch(actions.setSortBy(sortBy))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
